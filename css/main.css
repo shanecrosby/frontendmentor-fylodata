@@ -1,82 +1,107 @@
-@font-face {
-    font-family: 'Raleway';
-    src: url('');
-}
-
 :root {
-    --light-red: hsl(0, 100%, 67%);
-    --orange: hsl(39, 100%, 56%);
-    --green: hsl(166, 100%, 37%);
-    --cobalt-blue: hsl(234, 85%, 45%);
-    --blue: hsl(224,30%,27%);
-    --light-lavender: hsl(241, 100%, 89%);
-    --pale-blue: hsl(221, 100%, 96%);
+    --PaleBlue: hsl(243, 100%, 93%);
+    --GrayishBlue: hsl(229, 7%, 55%);
+    --DarkBlue: hsl(228, 56%, 26%);
+    --VeryDarkBlue: hsl(229, 57%, 11%);
 
-    --light-red-bg: hsla(0, 100%, 67%, .06);
-    --orange-bg: hsla(39, 100%, 56%, .06);
-    --green-bg: hsla(166, 100%, 37%, .06);
-    --cobalt-blue-bg: hsla(234, 85%, 45%, .06);
+    /*Bar graph Gradient*/
+    --gradient-top: hsl(6, 100%, 80%);
+    --gradient-bottom: hsl(335, 100%, 65%);
 
-    /*Light slate blue (background):*/
-    --gradient-bottom: hsl(252, 100%, 67%);
-    /*Light royal blue (background):*/ 
-    --gradient-top: hsl(241, 81%, 54%);
-    /*Violet blue (circle):*/
-    --circle-bottom: hsla(256, 72%, 46%, 1);
-    /*Persian blue (circle):*/
-    --circle-top: hsla(241, 72%, 46%, 0);
+    --border: hsla(229, 7%, 55%, .3);
 }
 
-body {
-    position: absolute;
+html, body {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
 }
 
-.sidebar {
+body {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    background-color: var(--VeryDarkBlue);
+}
 
+@media screen {
+    body {
+        background-image: url("../images/bg-desktop.png");
+        background-position: bottom right;
+        background-repeat: no-repeat;
+    }
+}
+
+#container {
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    width: 50vw;
+}
+
+.sidebar {
+    float: left;
+    border: 1px var(--border) solid;
+    border-radius: .5rem 5rem .5rem .5rem;
+    background: var(--DarkBlue);
+    width: 30%;
+    padding: 2rem;
 }
 
 .logo {
-
+    border: 1px var(--border) solid;
+    padding: .5rem;
 }
 
 .icons {
-
+    display: flex;
+    flex-direction: row;
+    border: 1px var(--border) solid;
+    padding: 1rem;
 }
 
 .icon {
-
+    align-content: center;
+    background-color: var(--VeryDarkBlue);
+    border-radius: .5rem;
+    height: 3rem; width: 3rem;
+    padding: .5rem;
+    margin: .5rem;
 }
 
 #stats {
-
+    float: left;
+    margin-left: 1rem;
+    width: 80%;
+    border: 1px var(--border) solid;
+    border-radius: .5rem;
+    background-color: var(--DarkBlue);
 }
 
 #usagesummary {
-
+    border: 1px var(--border) solid;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 #remaining {
-
+    border: 1px var(--border) solid;
 }
 
 #bargraph {
-
+    border: 1px var(--border) solid;
 }
 
 .usagebar {
-
+    border: 1px var(--border) solid;
 }
 
 .start {
-
+    border: 1px var(--border) solid;
 }
 
 .end {
-
+    border: 1px var(--border) solid;
 }
 
 .attribution { font-size: 11px; text-align: center; }

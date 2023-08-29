@@ -4,28 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="stylesheet" href="./css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet" type="text/css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Fylo data storage component</title>
 
 </head>
 <body>
-  <aside class="sidebar">
-    <div class="logo"></div>
-    <div class="icons">
-        <img class="icon" src="./images/icon-document.svg" alt="file icon" />
-        <img class="icon" src="./images/icon-folder.svg" alt="folder icon" />
-        <img class="icon" src="./images/icon-upload.svg" alt="cloud upload icon" />
-    </div>
-  </aside>
-  <section id="stats">
-    <div id="usagesummary">You’ve used 815 GB of your storage</div>
-    <div id="remaining">185 GB Left</div>
-    <div id="bargraph">
-      <div class="usagebar"></div>
-      <div class="start">0 GB</div><div class="end">1000 GB</div>
-    </div>
-  </section>
+  <div id="container">
+    <aside class="sidebar">
+      <div class="logo"><img src="./images/logo.svg" alt="Fylo Logo" /></div>
+      <div class="icons">
+          <div class="icon" ><img src="./images/icon-document.svg" alt="file icon" /></div>
+          <div class="icon" ><img src="./images/icon-folder.svg" alt="folder icon" /></div>
+          <div class="icon" ><img src="./images/icon-upload.svg" alt="cloud upload icon" /></div>
+      </div>
+    </aside>
+    <section id="stats">
+      <div id="usagesummary">You’ve used 815 GB of your storage</div>
+      <div id="remaining">185 GB Left</div>
+      <div id="bargraph">
+        <div class="usagebar"></div>
+        <div class="start">0 GB</div><div class="end">1000 GB</div>
+      </div>
+    </section>
+  </div>
   <footer class="attribution"></footer>
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Shane Crosby</a>.
