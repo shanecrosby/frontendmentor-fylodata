@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url('');
+}
+
+:root {
+    --light-red: hsl(0, 100%, 67%);
+    --orange: hsl(39, 100%, 56%);
+    --green: hsl(166, 100%, 37%);
+    --cobalt-blue: hsl(234, 85%, 45%);
+    --blue: hsl(224,30%,27%);
+    --light-lavender: hsl(241, 100%, 89%);
+    --pale-blue: hsl(221, 100%, 96%);
+
+    --light-red-bg: hsla(0, 100%, 67%, .06);
+    --orange-bg: hsla(39, 100%, 56%, .06);
+    --green-bg: hsla(166, 100%, 37%, .06);
+    --cobalt-blue-bg: hsla(234, 85%, 45%, .06);
+
+    /*Light slate blue (background):*/
+    --gradient-bottom: hsl(252, 100%, 67%);
+    /*Light royal blue (background):*/ 
+    --gradient-top: hsl(241, 81%, 54%);
+    /*Violet blue (circle):*/
+    --circle-bottom: hsla(256, 72%, 46%, 1);
+    /*Persian blue (circle):*/
+    --circle-top: hsla(241, 72%, 46%, 0);
+}
+
+body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+
+}
+
+.logo {
+
+}
+
+.icons {
+
+}
+
+.icon {
+
+}
+
+#stats {
+
+}
+
+#usagesummary {
+
+}
+
+#remaining {
+
+}
+
+#bargraph {
+
+}
+
+.usagebar {
+
+}
+
+.start {
+
+}
+
+.end {
+
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
