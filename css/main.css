@@ -3,10 +3,12 @@
     --GrayishBlue: hsl(229, 7%, 55%);
     --DarkBlue: hsl(228, 56%, 26%);
     --VeryDarkBlue: hsl(229, 57%, 11%);
+    --QuiteDarkBlue: hsla(229, 57%, 11%, .5);
+    --Shadow: hsla(229, 57%, 11%, .5);
 
     /*Bar graph Gradient*/
-    --gradient-top: hsl(6, 100%, 80%);
-    --gradient-bottom: hsl(335, 100%, 65%);
+    --gradient-start: hsl(6, 100%, 80%);
+    --gradient-end: hsl(335, 100%, 65%);
 
     --border: hsla(229, 7%, 55%, .3);
 }
@@ -20,89 +22,249 @@ html, body {
 
 body {
     font-family: 'Raleway', sans-serif;
-    color: white;
+    color: var(--PaleBlue);
     background-color: var(--VeryDarkBlue);
 }
 
-@media screen {
+/* Large Screens */
+@media all and (min-width: 800px) and (max-width:1920px){
     body {
         background-image: url("../images/bg-desktop.png");
         background-position: bottom right;
         background-repeat: no-repeat;
     }
+
+    #main {
+        position: absolute;
+        width: 80vw;
+        top: 30%;
+        left: 15%;
+        align-items: flex-end;
+        gap: 1rem;
+    }
+
+    #sidebar {
+        width: 20rem;
+    }
+
+    #stats{
+        width: 60%;
+        height: 6rem;
+        margin-left: 1rem;
+        padding: .5rem 2rem 3rem 2rem;
+    }
+
+    .callout {
+        border-radius: 1rem 1rem 0 1rem;
+        translate: 0 -5rem;
+        width: 9.5rem;
+        height: 3rem;
+        padding: .8rem 1.5rem;
+    }
+
+    .usagemarker {
+        left: 97.6%;
+    }
 }
 
-#container {
-    position: absolute;
-    top: 40%;
-    left: 15%;
-    width: 50vw;
+/* Small Screens */
+@media all and (max-width: 800px){
+    body {
+        background-image: url("../images/bg-mobile.png");
+        background-position: top left;
+        background-size: cover;
+    }
+    
+    #main {
+        position: relative;
+        float: left;
+        flex-direction: column;
+        top: 20%;
+        left: 10%;
+        gap: 1rem;
+    }
+    
+    #sidebar {
+        width: 80%;
+        margin: 0;
+    }
+
+    #stats {
+        width: 80%;
+        height: 6rem;
+        margin: 0;
+        padding: 0 2rem 4rem 2rem;
+    }
+    #usagesummary {
+        text-align: center;
+    }
+    .callout {
+        border-radius: .7rem;
+        left: 20%;
+        top: 90%;
+        width: 8rem;
+        height: 3rem;
+        padding: .8rem 1.5rem;
+    }
+    .calloutorigin {
+        display: none;
+    }
+
+    .barlabels {
+        font-size: .8rem;
+    }
+
+    .usagemarker {
+        left: 93%;
+    }
 }
 
-.sidebar {
+
+/* ---------- End responsive section ---------------- */
+#main {
+    display: flex;
+}
+
+#sidebar, #stats {
+    box-shadow: 20px 20px 40px var(--Shadow);
+}
+
+#sidebar { /* Left-hand box containing logo and icons */
     float: left;
-    border: 1px var(--border) solid;
     border-radius: .5rem 5rem .5rem .5rem;
     background: var(--DarkBlue);
-    width: 30%;
     padding: 2rem;
 }
 
 .logo {
-    border: 1px var(--border) solid;
-    padding: .5rem;
+    margin: .5rem 0 2rem 0;
 }
 
 .icons {
     display: flex;
     flex-direction: row;
-    border: 1px var(--border) solid;
-    padding: 1rem;
+    gap: 1rem;
+    margin-bottom: .5rem;
 }
 
 .icon {
-    align-content: center;
     background-color: var(--VeryDarkBlue);
-    border-radius: .5rem;
-    height: 3rem; width: 3rem;
-    padding: .5rem;
-    margin: .5rem;
+    border-radius: 20%;
+    height: 50px; width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#stats {
+.icon img {
+    position: relative;
+}
+
+#stats { /* Right-hand box containing the bar graph and usage details */
     float: left;
-    margin-left: 1rem;
-    width: 80%;
-    border: 1px var(--border) solid;
     border-radius: .5rem;
     background-color: var(--DarkBlue);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+}
+
+#responsive { /* Flex element to allow for callout to remain pinned to right of bar */
+    flex:1;
 }
 
 #usagesummary {
-    border: 1px var(--border) solid;
     font-size: 14px;
     font-weight: 400;
 }
 
+.emphasised {
+    font-weight: 700;
+}
+
 #remaining {
-    border: 1px var(--border) solid;
+    display: flex;
+    align-items: center;
+    padding-bottom: 1.5rem;
+}
+
+#remainleft {
+    flex: auto;
+    color: var(--VeryDarkBlue);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#remainright{
+    flex: auto;
+    color: var(--GrayishBlue);
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.callout { /* white callout box indicating remaining free space */
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+}
+
+.calloutorigin { /* css trick to make the triangular part of the callout */
+    translate: 9.13rem -2.5rem;
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent; 
+    border-right:30px solid white; 
 }
 
 #bargraph {
-    border: 1px var(--border) solid;
+    background-color: var(--QuiteDarkBlue);
+    border-radius: 1rem;
+    height: 1rem;
+    width: 100%;
+    margin: 1rem 0;
+    position: relative;
 }
 
 .usagebar {
-    border: 1px var(--border) solid;
+    height: 70%;
+    width: 71%;
+    background-image: linear-gradient(to right, var(--gradient-start) 0, var(--gradient-end) 100%);
+    border-radius: 1rem;
+    translate: 1% 25%;
+}
+
+.usagemarker {
+    position: fixed;
+    background-color: white;
+    border-radius: 50%;
+    height: 9px; width: 9px;
+    top: 8%;
+}
+
+/* bar graph legend labels */
+.barlabels {
+    font-weight: 600;
+    display: flex;
+    padding: .5rem 0;
 }
 
 .start {
-    border: 1px var(--border) solid;
+    flex: auto;
+    text-align: left;
 }
 
 .end {
-    border: 1px var(--border) solid;
+    flex: auto;
+    text-align: right;
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution { 
+    font-size: 12px; text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 1rem;
+    margin-bottom: 1rem;
+}
+.attribution a { color: var(--GrayishBlue); }
