@@ -11,25 +11,32 @@
 
 </head>
 <body>
-  <div id="container">
-    <aside class="sidebar">
+  <div id="main">
+    <section id="sidebar">
       <div class="logo"><img src="./images/logo.svg" alt="Fylo Logo" /></div>
       <div class="icons">
           <div class="icon" ><img src="./images/icon-document.svg" alt="file icon" /></div>
           <div class="icon" ><img src="./images/icon-folder.svg" alt="folder icon" /></div>
           <div class="icon" ><img src="./images/icon-upload.svg" alt="cloud upload icon" /></div>
       </div>
-    </aside>
+    </section>
     <section id="stats">
-      <div id="usagesummary">You’ve used 815 GB of your storage</div>
-      <div id="remaining">185 GB Left</div>
-      <div id="bargraph">
-        <div class="usagebar"></div>
-        <div class="start">0 GB</div><div class="end">1000 GB</div>
+      <div id="responsive">
+        <div id="usagesummary"><p>You've used <span class="emphasised">815 GB</span> of your storage</p></div>
+        <div id="bargraph">
+          <div class="usagebar"><div class="usagemarker"></div></div>
+          <div class="barlabels"><div class="start">0 GB</div><div class="end">1000 GB</div></div>
+        </div>
+      </div>
+      <div class="callout">
+        <div id="remaining">
+          <div id="remainleft">185</div><div id="remainright">GB LEFT</div>
+        </div>
+        <div class="calloutorigin"></div>
       </div>
     </section>
   </div>
-  <footer class="attribution"></footer>
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Shane Crosby</a>.
   </footer>
